@@ -5,11 +5,10 @@ export const GifExpertApp = () => {
 
     const [categorias, setCategorias] = useState(['One Punch'])
     
-    const onAgregarCategoria = () => {
-        // setCategorias(categorias => {
-        //     return [...categorias,'dos']
-        // })
-        setCategorias([...categorias,'dos']);
+    const onAgregarCategoria = (cate) => {
+        if(categorias.includes(cate)) return 'La categoria ya existe';
+        setCategorias([cate,...categorias]);
+        return true
     }
     
     return (
@@ -17,9 +16,11 @@ export const GifExpertApp = () => {
         {/* Titulo de la aplicacion */}
             <h1>Buscador de gifs</h1>
             {/* Input */}
-            <AddCategory></AddCategory>
+            <AddCategory 
+                // setCategorias={setCategorias}
+                onNuevaCategoria={onAgregarCategoria}
+            ></AddCategory>
             {/* Listado de gifs */}
-            <button onClick={onAgregarCategoria}>Agregar</button>
             <ol>
             {
                 categorias.map( (elemento) => {

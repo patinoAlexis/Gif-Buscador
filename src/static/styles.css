@@ -61,3 +61,6 @@
   .card img {
     width: 100%;
   }
+  .alerta-error{
+    color: red;
+  }
