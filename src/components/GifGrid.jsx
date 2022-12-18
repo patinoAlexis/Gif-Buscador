@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { GifTarjeta } from "./GifTarjeta";
-import { useFetchGifs } from "./hooks/useFetchGifs";
-import { getGifs } from "./utils/getGifs";
+import { useFetchGifs } from "../hooks/useFetchGifs";
+import { getGifs } from "../utils/getGifs";
 
 
 export const GifGrid = ({categoria}) => {
@@ -10,6 +10,7 @@ export const GifGrid = ({categoria}) => {
   return (
     <>
         <h3>{categoria}</h3>
+        {cargando && <h2>Cargando...</h2>}
         <div className="card-grid">
           {
             imagenes.map(el => (
