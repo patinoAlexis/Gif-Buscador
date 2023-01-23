@@ -17,6 +17,10 @@ export const useFetchGifs = (categoria) => {
     },[])
     return {
         imagenes: imagenes,
+        //Como el nombre del objeto y la variable
+        // se llaman igual, podemos simplemente
+        // solo poner solo el nombre de la variable
+        // y js lo entendera
         cargando
     }
 }
